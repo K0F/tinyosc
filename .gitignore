@@ -32,4 +32,5 @@
 *.dSYM/
 
 tinyosc
+oscrec
 tinyosc-osx
