@@ -24,7 +24,7 @@
 
 #include "tinyosc.h"
 
-#define port 7000
+#define PORT 7000
 
 static volatile bool keepRunning = true;
 
@@ -56,10 +56,10 @@ int main(int argc, char *argv[]) {
   fcntl(fd, F_SETFL, O_NONBLOCK); // set the socket to non-blocking
   struct sockaddr_in sin;
   sin.sin_family = AF_INET;
-  sin.sin_port = htons(port);
+  sin.sin_port = htons(PORT);
   sin.sin_addr.s_addr = INADDR_ANY;
   bind(fd, (struct sockaddr *) &sin, sizeof(struct sockaddr_in));
-  printf("tinyosc is now listening on port 9000.\n");
+  printf("tinyosc is now listening on port %d.\n",PORT);
   printf("Press Ctrl+C to stop.\n");
 
   while (keepRunning) {
